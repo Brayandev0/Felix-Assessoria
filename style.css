@@ -21,6 +21,8 @@
     box-sizing: border-box;
 }
 
+html {
+}
 
 body {
     font-family: var(--font-family);
@@ -56,6 +58,8 @@ header.site-header {
 
 header .container {
     display: flex;
+    width: 100%;
+    max-width: none;
     justify-content: space-between;
     align-items: center;
 }
@@ -226,7 +230,7 @@ section {
 
 /* Hero Section */
 #inicio { /* Apply 100vh height only to the hero section */
-    min-height: 100vh;
+    min-height: 93vh;
     display: flex; /* Enable flexbox for vertical centering */
     align-items: center; /* Vertically center the container */
     justify-content: center; /* Horizontally center the container */
@@ -566,6 +570,10 @@ footer {
     border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
     color: var(--text-light);
+}
+
+footer .container {
+    max-width: none;
 }
 
 .footer-container {
