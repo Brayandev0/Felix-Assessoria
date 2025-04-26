@@ -1,0 +1,801 @@
+:root {
+    --background-color: #F8F6F3;
+    --primary-color: #2A6463; /* Dark Teal */
+    --secondary-color: #3D9998; /* Lighter Teal/Cyan */
+    --text-color: #333;
+    --text-light: #555;
+    --white: #fff;
+    --border-color: #ddd;
+    --light-border-color: #eee; /* Subtle border color */
+    --font-family: 'Poppins', sans-serif;
+    --overlay-bg-light: var(--white); /* New white overlay */
+    --button-border-radius: 6px; /* Consistent border radius */
+    --button-padding: 10px 24px; /* Consistent padding */
+    --button-transition: all 0.3s ease;
+    --header-height: 71px; /* Approximate height of the fixed header */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Moved from html */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%; /* Ensure container takes width within flex parent */
+}
+
+/* Header */
+header.site-header {
+    background-color: var(--background-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: padding 0.3s ease; /* Add transition for padding changes */
+    height: var(--header-height); /* Define header height */
+    display: flex; /* Use flex to center content vertically */
+    align-items: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    z-index: 1001; /* Keep logo above potential elements */
+}
+
+/* Desktop Navigation */
+nav.main-nav ul.desktop-nav {
+    list-style: none;
+    display: flex; /* Will be hidden on mobile */
+}
+
+nav.main-nav ul.desktop-nav li {
+    margin-left: 25px;
+}
+
+nav.main-nav ul.desktop-nav li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav.main-nav ul.desktop-nav li a:hover {
+    color: var(--primary-color);
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    display: none; /* Hidden by default, shown in media query */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+    color: var(--primary-color);
+}
+
+.menu-toggle .icon-menu {
+    width: 28px;
+    height: 28px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Fullscreen Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--overlay-bg-light); /* Changed to white */
+    z-index: 1010;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
+    padding: 70px 20px 40px; /* Adjusted padding */
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease; /* Added opacity transition */
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.mobile-menu-overlay.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close button inside overlay */
+.overlay-close-btn {
+    position: absolute;
+    top: 20px; /* Adjusted position */
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--primary-color); /* Changed color for white bg */
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1011;
+}
+
+.overlay-close-btn i {
+    width: 32px;
+    height: 32px;
+}
+
+/* Logo inside overlay */
+.overlay-logo {
+    font-size: 1.6rem; /* Slightly smaller */
+    font-weight: 600;
+    color: var(--primary-color); /* Changed color for white bg */
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px; /* Reduce margin */
+    text-align: center; /* Center logo text */
+}
+
+/* Navigation list inside overlay */
+.overlay-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px 0; /* Further reduced margin */
+    text-align: center;
+    width: 100%; /* Full width for list */
+    max-width: 320px; /* Optional max-width */
+}
+
+.overlay-nav-list li {
+    margin-bottom: 12px; /* Reduce space between links */
+}
+
+.overlay-nav-list li a.overlay-nav-link {
+    text-decoration: none;
+    color: var(--secondary-color); /* Button text color */
+    font-size: 1rem; /* Slightly smaller font */
+    font-weight: 500;
+    transition: var(--button-transition);
+    padding: 10px 18px; /* Button padding */
+    display: block; /* Make link fill list item */
+    border: 1px solid var(--secondary-color); /* Button border */
+    background-color: var(--white); /* Button background */
+    border-radius: var(--button-border-radius); /* Button border radius */
+}
+
+.overlay-nav-list li a.overlay-nav-link:hover {
+    background-color: var(--secondary-color); /* Hover background */
+    color: var(--white); /* Hover text color */
+}
+
+/* WhatsApp button inside overlay */
+.overlay-whatsapp-btn {
+    margin-top: auto; /* Push to the bottom */
+    padding: var(--button-padding);
+    font-size: 1rem;
+    width: 100%; /* Full width */
+    max-width: 320px; /* Match nav links width */
+    border-radius: var(--button-border-radius);
+    margin-bottom: 20px; /* Add some space at the very bottom */
+}
+
+/* Main Content */
+main {
+    padding-top: var(--header-height); /* Adjust based on fixed header height */
+    margin-top: 0; /* Remove margin-top, use padding-top instead */
+}
+
+/* Section Base Styles (Padding) */
+section {
+    padding: 60px 0; /* Default padding for sections */
+    background-color: var(--background-color); /* Ensure consistent background */
+    overflow: hidden; /* Prevent horizontal scroll issues */
+}
+
+/* Hero Section */
+#inicio { /* Apply 100vh height only to the hero section */
+    min-height: 100vh;
+    display: flex; /* Enable flexbox for vertical centering */
+    align-items: center; /* Vertically center the container */
+    justify-content: center; /* Horizontally center the container */
+    position: relative;
+    padding: 60px 0; /* Keep padding consistent */
+}
+
+.hero {
+    /* Removed position relative and overflow hidden here, handled by #inicio */
+    width: 100%; /* Ensure hero takes full width within #inicio */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text .subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.hero-text h1 .highlight {
+    color: var(--secondary-color);
+}
+
+.hero-text p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
+    color: var(--text-light);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* Background Shape for Hero - Removed or Hidden */
+.hero-background-shape {
+    position: absolute;
+    bottom: -10px; /* Adjust overlap */
+    left: 0;
+    width: 100%;
+    height: 150px; /* Reduce height */
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.9; /* Make it slightly less prominent */
+}
+
+.hero-background-shape svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-background-shape path {
+    fill: var(--primary-color); /* Match the primary color */
+}
+
+/* Services Section */
+.services { /* No min-height here */
+    text-align: center;
+}
+
+.services h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Responsive font size */
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.highlight-underline {
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 5px;
+}
+
+.services .section-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
+    color: var(--text-light);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.service-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.service-item i {
+    color: var(--secondary-color);
+    width: 48px;
+    height: 48px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-item h3 {
+    font-size: clamp(1.2rem, 3.5vw, 1.4rem); /* Responsive font size */
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.service-item p {
+    color: var(--text-light);
+}
+
+/* About & Contact Section */
+.about-contact { /* No min-height here */
+    padding: 60px 0;
+}
+
+.about-contact-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.about-content, .contact-content {
+    flex: 1;
+}
+
+.about-content h2, .contact-content h2 {
+    font-size: clamp(1.8rem, 4vw, 2rem); /* Responsive font size */
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.about-content p, .contact-content p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.about-content strong {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.feature .check-icon {
+    color: var(--secondary-color);
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.feature h3 {
+    font-size: clamp(1.1rem, 3vw, 1.2rem); /* Responsive font size */
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.feature p {
+    margin-bottom: 0;
+    color: var(--text-light);
+}
+
+.contact-info p {
+    display: flex;
+    align-items: flex-start; /* Align icon with first line of text */
+    gap: 10px;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.contact-info i {
+    color: var(--secondary-color);
+    width: 20px;
+    height: 20px;
+    margin-top: 2px; /* Fine-tune vertical alignment */
+    flex-shrink: 0;
+}
+
+.contact-info p span {
+    line-height: 1.5; /* Improve readability of multi-line address */
+}
+
+/* WhatsApp Button Style (Used in Contact and Overlay) */
+.btn-whatsapp {
+    background-color: var(--white);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    gap: 8px;
+    transition: var(--button-transition);
+}
+
+.btn-whatsapp svg {
+    stroke: currentColor;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.btn-whatsapp:hover {
+    background-color: rgba(61, 153, 152, 0.08); /* Light cyan hover */
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Base button style (applied via specific classes) */
+.btn {
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    transition: var(--button-transition);
+    cursor: pointer;
+    border: 1px solid var(--secondary-color); /* Default border */
+}
+
+/* Primary Button Style (e.g., "Entre em contato") */
+.btn-primary {
+    background-color: var(--secondary-color); /* Solid cyan background */
+    color: var(--white); /* White text */
+    border-color: var(--secondary-color); /* Matching border */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color); /* Darker teal on hover */
+    border-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Secondary Button Style (e.g., "Serviços") */
+.btn-secondary {
+    background-color: var(--white); /* White background */
+    color: var(--secondary-color); /* Cyan text */
+    border: 1px solid var(--secondary-color); /* Cyan border */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(61, 153, 152, 0.08); /* Very light cyan bg on hover */
+    border-color: var(--primary-color); /* Darker border on hover */
+    color: var(--primary-color); /* Darker text on hover */
+    transform: translateY(-2px);
+}
+
+/* Hero Buttons Container */
+.hero-buttons .btn {
+    margin-right: 15px;
+    margin-bottom: 10px; /* Add margin for stacking on mobile */
+}
+
+.hero-buttons .btn:last-child {
+    margin-right: 0;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    max-height: clamp(250px, 40vw, 350px); /* Responsive max-height */
+}
+
+/* Stats Section */
+.stats { /* No min-height here */
+    background-color: var(--primary-color);
+    padding: 40px 20px; /* Add horizontal padding */
+    color: var(--white);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add gap for wrapped items */
+}
+
+.stat-item h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem); /* Responsive font size */
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Responsive font size */
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    background-color: var(--background-color);
+    padding: 25px 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 20px; /* Consistent gap */
+}
+
+.footer-left {
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.footer-center {
+    text-align: center;
+    flex-grow: 1; /* Allow center to take space */
+    min-width: 200px; /* Allow wrapping sooner */
+}
+
+.footer-right {
+    display: flex; /* Ensure icons align horizontally */
+    align-items: center;
+    gap: 15px; /* Gap between icons */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.footer-left a {
+    color: var(--text-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.footer-left a i {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-left a:hover {
+    color: var(--primary-color);
+}
+
+.footer-right a {
+    margin-left: 0; /* Remove default margin, use gap */
+    color: var(--text-light);
+    transition: color 0.3s ease;
+    display: inline-block; /* Fix alignment issue */
+    line-height: 0; /* Fix alignment issue */
+}
+
+.footer-right a i, .footer-right a svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-color);
+}
+
+/* Floating WhatsApp Button (Kept green as per standard convention) */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-float svg {
+    fill: white;
+    stroke: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    section {
+        padding: 40px 0; /* Adjust padding for all sections on medium screens */
+    }
+    #inicio {
+        padding: 40px 0; /* Adjust hero padding */
+        min-height: calc(100vh - var(--header-height)); /* Example: Account for header */
+    }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px; /* Reduce gap */
+    }
+    .hero-text {
+        order: 2;
+    }
+    .hero-image {
+        order: 1;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-image svg {
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 300px;
+    }
+    .hero-background-shape {
+        height: 80px; /* Adjust shape height */
+    }
+
+    .about-contact-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact-content {
+        text-align: center; /* Center contact content on tablet */
+    }
+    .contact-info {
+        text-align: left; /* Keep info text left aligned */
+        display: inline-block; /* Center the block */
+        margin-bottom: 20px;
+    }
+    .contact-info p {
+        justify-content: flex-start; /* Align items to start */
+    }
+
+    .contact-content .btn-whatsapp {
+        margin: 0 auto; /* Center button */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 61px; /* Adjust header height for mobile */
+    }
+
+    header.site-header {
+    }
+
+    nav.main-nav ul.desktop-nav {
+        display: none;
+    }
+
+    main {
+        padding-top: var(--header-height); /* Adjust based on fixed header height */
+    }
+
+    section {
+        padding: 40px 0; /* Adjust padding */
+    }
+    #inicio {
+        padding: 40px 0; /* Adjust hero padding */
+        min-height: calc(100vh - var(--header-height)); /* Example */
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 30px 0; /* Further reduce padding for sections */
+    }
+    #inicio {
+        padding: 30px 0; /* Further reduce hero padding */
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons */
+        gap: 10px; /* Add gap between stacked buttons */
+    }
+    .hero-buttons .btn {
+        margin-right: 0; /* Remove horizontal margin */
+        width: 90%; /* Make buttons wider */
+        max-width: 300px; /* Add a max-width */
+        padding: 12px 20px; /* Adjust padding */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px; /* Reduce gap */
+    }
+    .service-item {
+        padding: 25px; /* Adjust padding */
+    }
+
+    .about-content, .contact-content {
+        padding: 0 10px; /* Add slight horizontal padding */
+    }
+
+    .overlay-nav-list, .overlay-whatsapp-btn {
+        max-width: calc(100% - 40px); /* Ensure buttons don't touch edge, relative to padding */
+    }
+
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .footer-container {
+        gap: 12px;
+    }
+    .footer-right {
+        gap: 12px;
+    }
+    .footer-right a i, .footer-right a svg {
+        width: 22px;
+        height: 22px;
+    }
+    .footer-center p {
+        font-size: 0.85rem;
+    }
+}
