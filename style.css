@@ -564,43 +564,28 @@ section {
     opacity: 0.9;
 }
 
-/* Footer */
 footer {
-    background-color: var(--background-color);
-    padding: 25px 0;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
-    color: var(--text-light);
+    min-height: 60px;
+    align-content: center;
+}
+
+.footer-container    {
+    display: flex;
+    justify-content: space-between;
 }
 
 footer .container {
     max-width: none;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow wrapping */
-    gap: 20px; /* Consistent gap */
-}
-
+/* Ajustes para os botões de app store no footer */
 .footer-left {
-    flex-shrink: 0; /* Prevent shrinking */
-}
-
-.footer-center {
-    text-align: center;
-    flex-grow: 1; /* Allow center to take space */
-    min-width: 200px; /* Allow wrapping sooner */
-}
-
-.footer-right {
-    display: flex; /* Ensure icons align horizontally */
+    display: flex;
     align-items: center;
-    gap: 15px; /* Gap between icons */
-    flex-shrink: 0; /* Prevent shrinking */
+    gap: 15px; /* Espaçamento consistente entre elementos */
 }
+
+
 
 .footer-left a {
     color: var(--text-light);
@@ -611,27 +596,44 @@ footer .container {
     transition: color 0.3s ease;
 }
 
-.footer-left a i {
-    width: 18px;
-    height: 18px;
+/* Estilo específico para botões de app store */
+.footer-left a.store-button {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-border-radius);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
-.footer-left a:hover {
-    color: var(--primary-color);
+.footer-left a.store-button:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.footer-right a {
-    margin-left: 0; /* Remove default margin, use gap */
-    color: var(--text-light);
-    transition: color 0.3s ease;
-    display: inline-block; /* Fix alignment issue */
-    line-height: 0; /* Fix alignment issue */
-}
-
-.footer-right a i, .footer-right a svg {
+.footer-left a.store-button img {
     width: 24px;
     height: 24px;
-    stroke: var(--primary-color);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-left a.store-button:hover img {
+    opacity: 1;
+}
+
+.footer-center p {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 5px;
+}
+
+.footer-right {
+    gap: 10px;
+    display: flex;
 }
 
 /* Floating WhatsApp Button (Kept green as per standard convention) */
@@ -667,6 +669,7 @@ footer .container {
     section {
         padding: 40px 0; /* Adjust padding for all sections on medium screens */
     }
+
     .hero-image {
         display: none;
     }
@@ -797,17 +800,36 @@ footer .container {
         height: 28px;
     }
 
+
+}
+
+/* Melhorias na responsividade do footer */
+@media (max-width: 768px) {
     .footer-container {
-        gap: 12px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
-    .footer-right {
-        gap: 12px;
+    
+    .footer-left, .footer-center, .footer-right {
+        width: 100%;
+        justify-content: center;
     }
-    .footer-right a i, .footer-right a svg {
-        width: 22px;
-        height: 22px;
+}
+
+@media (max-width: 480px) {
+    .footer-left {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
-    .footer-center p {
-        font-size: 0.85rem;
+    
+    .footer-left a.store-button {
+        padding: 4px 8px;
+    }
+    
+    .footer-left a.store-button img {
+        width: 20px;
+        height: 20px;
     }
 }
