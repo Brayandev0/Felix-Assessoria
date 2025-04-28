@@ -278,6 +278,7 @@ section {
     color: var(--text-light);
     margin-bottom: 30px;
     max-width: 500px;
+    text-align: justify;
 }
 
 /* Background Shape for Hero - Removed or Hidden */
@@ -665,6 +666,9 @@ footer .container {
 @media (max-width: 992px) {
     section {
         padding: 40px 0; /* Adjust padding for all sections on medium screens */
+    }
+    .hero-image {
+        display: none;
     }
     #inicio {
         padding: 40px 0; /* Adjust hero padding */
