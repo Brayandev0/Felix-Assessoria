@@ -1,6 +1,6 @@
 :root {
     --background-color: #F8F6F3;
-    --primary-color: #2A6463; /* Dark Teal */
+    --primary-color: #114f53; /* Dark Teal */
     --secondary-color: #3D9998; /* Lighter Teal/Cyan */
     --text-color: #333;
     --text-light: #555;
@@ -30,6 +30,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     scroll-behavior: smooth; /* Moved from html */
+    margin-bottom: 60px;
 }
 
 .container {
@@ -71,6 +72,10 @@ header .container {
     display: flex;
     align-items: center;
     z-index: 1001; /* Keep logo above potential elements */
+}
+.logo img {
+    width: 45px; 
+    margin-right: 10px;
 }
 
 /* Desktop Navigation */
@@ -114,6 +119,17 @@ nav.main-nav ul.desktop-nav li a:hover {
     .menu-toggle {
         display: block;
     }
+}
+
+#inicio .container {
+    max-width: 1500px;
+}
+
+#inicio {
+    background-image: url(fundo-inicio.png);
+    background-repeat: no-repeat;
+    background-size: clamp(250px, 50%, 1000px);
+    background-position: right bottom;
 }
 
 /* Fullscreen Mobile Menu Overlay */
@@ -230,7 +246,7 @@ section {
 
 /* Hero Section */
 #inicio { /* Apply 100vh height only to the hero section */
-    min-height: 93vh;
+    min-height: 100vh;
     display: flex; /* Enable flexbox for vertical centering */
     align-items: center; /* Vertically center the container */
     justify-content: center; /* Horizontally center the container */
@@ -277,7 +293,7 @@ section {
     font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
     color: var(--text-light);
     margin-bottom: 30px;
-    max-width: 500px;
+    max-width: 600px;
     text-align: justify;
 }
 
@@ -290,7 +306,7 @@ section {
     height: 150px; /* Reduce height */
     z-index: 1;
     pointer-events: none;
-    opacity: 0.9; /* Make it slightly less prominent */
+    opacity: 1; /* Make it slightly less prominent */
 }
 
 .hero-background-shape svg {
@@ -302,6 +318,12 @@ section {
 .hero-background-shape path {
     fill: var(--primary-color); /* Match the primary color */
 }
+
+#servicos .container {
+    max-width: 1200px; /* Adjusted for larger screens */
+}
+
+
 
 /* Services Section */
 .services { /* No min-height here */
@@ -377,14 +399,21 @@ section {
     align-items: flex-start;
 }
 
+
 .about-content, .contact-content {
     flex: 1;
 }
 
+.about-content {
+   max-width: 600px;
+   text-align: justify ;
+   justify-content: space-between;
+}
 .about-content h2, .contact-content h2 {
     font-size: clamp(1.8rem, 4vw, 2rem); /* Responsive font size */
     margin-bottom: 20px;
     color: var(--primary-color);
+    text-align: left;
 }
 
 .about-content p, .contact-content p {
@@ -567,6 +596,12 @@ section {
 footer {
     min-height: 60px;
     align-content: center;
+    z-index: 3; 
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    background-color: inherit;
 }
 
 .footer-container    {
@@ -639,9 +674,8 @@ footer .container {
 /* Floating WhatsApp Button (Kept green as per standard convention) */
 .whatsapp-float {
     position: fixed;
-    bottom: 25px;
+    bottom: 75px;
     right: 25px;
-    background-color: #25D366;
     color: white;
     width: 60px;
     height: 60px;
@@ -650,7 +684,7 @@ footer .container {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    z-index: 2;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -664,23 +698,63 @@ footer .container {
     transform: scale(1.1);
 }
 
+.store-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #000;
+    color:  rgb(221, 212, 212);
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.store-button:hover {
+    background-color: #333;
+}
+
+.store-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.store-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.store-text .small {
+    font-size: 10px;
+}
+
+.store-text .big {
+    font-weight: bold;
+    font-size: 14px;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     section {
         padding: 40px 0; /* Adjust padding for all sections on medium screens */
     }
 
+    
+
     .hero-image {
         display: none;
     }
     #inicio {
         padding: 40px 0; /* Adjust hero padding */
-        min-height: calc(100vh - var(--header-height)); /* Example: Account for header */
+        min-height: calc(100vh); /* Example: Account for header */
     }
 
     .hero-container {
         flex-direction: column;
-        text-align: center;
         gap: 30px; /* Reduce gap */
     }
     .hero-text {
@@ -811,13 +885,44 @@ footer .container {
         gap: 15px;
     }
     
+    body {
+        margin-bottom: 0px;
+    }
+
+    footer {
+        position: unset;
+    }
+
     .footer-left, .footer-center, .footer-right {
         width: 100%;
         justify-content: center;
     }
+    .footer-left {
+        display: none;
+    }
+    .footer-center {
+        text-align: center;
+    }
+    .footer-right {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
+    
+.logo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    z-index: 1001; /* Keep logo above potential elements */
+}
+.logo img {
+    width: 30px; 
+    margin-right: 10px;
+}
+
     .footer-left {
         flex-wrap: wrap;
         justify-content: center;
