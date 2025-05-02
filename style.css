@@ -671,14 +671,14 @@ footer .container {
     display: flex;
 }
 
-/* Floating WhatsApp Button (Kept green as per standard convention) */
 .whatsapp-float {
     position: fixed;
     bottom: 75px;
     right: 25px;
-    color: white;
+    background-color: #25D366;
     width: 60px;
     height: 60px;
+    padding-left: 1px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -689,14 +689,15 @@ footer .container {
 }
 
 .whatsapp-float svg {
-    fill: white;
-    stroke: none;
+    width: 45px;
+    height: 45px;
 }
 
 .whatsapp-float:hover {
     background-color: #128C7E;
     transform: scale(1.1);
 }
+
 
 .store-button {
     display: inline-flex;
