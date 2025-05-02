@@ -297,12 +297,15 @@ section {
     text-align: justify;
 }
 
+
+
+
 /* Background Shape for Hero - Removed or Hidden */
 .hero-background-shape {
     position: absolute;
-    bottom: -10px; /* Adjust overlap */
     left: 0;
     width: 100%;
+    bottom: -8%;
     height: 150px; /* Reduce height */
     z-index: 1;
     pointer-events: none;
@@ -318,6 +321,10 @@ section {
 .hero-background-shape path {
     fill: var(--primary-color); /* Match the primary color */
 }
+
+
+
+
 
 #servicos .container {
     max-width: 1200px; /* Adjusted for larger screens */
@@ -738,6 +745,16 @@ footer .container {
     font-size: 14px;
 }
 
+
+@media (max-width: 1024px) {
+
+    .hero-background-shape {
+        top: 97vh;
+    }
+
+}
+
+
 /* Responsive Design */
 @media (max-width: 992px) {
     section {
@@ -778,6 +795,8 @@ footer .container {
     }
     .hero-background-shape {
         height: 80px; /* Adjust shape height */
+        bottom: -15px;
+        top: inherit;
     }
 
     .about-contact-container {
