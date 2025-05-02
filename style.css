@@ -795,7 +795,7 @@ footer .container {
     }
     .hero-background-shape {
         height: 80px; /* Adjust shape height */
-        bottom: -15px;
+        bottom: -5%;
         top: inherit;
     }
 
@@ -824,6 +824,12 @@ footer .container {
 @media (max-width: 768px) {
     :root {
         --header-height: 61px; /* Adjust header height for mobile */
+    }
+
+    .hero-background-shape {
+        height: 80px; /* Adjust shape height */
+        bottom: 0%;
+        top: inherit;
     }
 
     header.site-header {
@@ -892,6 +898,12 @@ footer .container {
     .whatsapp-float svg {
         width: 28px;
         height: 28px;
+    }
+
+    .hero-background-shape {
+        height: 80px; /* Adjust shape height */
+        bottom: inherit;
+        top:  calc(100vh - var(--header-height));
     }
 
 
