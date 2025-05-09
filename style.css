@@ -688,8 +688,33 @@ footer .container {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 5px;
-    transition: color 0.3s ease;
+    gap: 8px; /* Aumentei o gap para melhor espaçamento */
+    transition: all 0.3s ease; /* Transição para todas as propriedades */
+    font-weight: 500; /* Deixa o texto um pouco mais gross */
+    padding: 8px 12px; /* Espaçamento interno para destacar */
+    border-radius: 6px; /* Bordas arredondadas suaves */
+}
+
+.footer-left a:hover {
+    color: #ffffff; /* Cor branca pura no hover */
+    background: rgba(255, 255, 255, 0.1); /* Fundo sutil ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de "levitação" */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra no texto */
+}
+
+/* Efeito no ícone do Feather */
+.footer-left a i[data-feather] {
+    transition: transform 0.3s ease; /* Transição específica para o ícone */
+}
+
+.footer-left a:hover i[data-feather] {
+    transform: scale(1.1); /* Aumenta levemente o ícone */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Sombra no ícone */
+}
+
+/* Opcional: Efeito ao clicar */
+.footer-left a:active {
+    transform: translateY(1px);
 }
 
 /* Estilo específico para botões de app store */
@@ -948,7 +973,7 @@ footer .container {
     .whatsapp-float {
         width: 55px;
         height: 55px;
-        bottom: 28px;
+        bottom: 58px;
         right: 20px;
     }
     .whatsapp-float svg {
