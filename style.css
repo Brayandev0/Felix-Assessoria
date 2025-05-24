@@ -1050,3 +1050,505 @@ footer .container {
         height: 20px;
     }
 }
+@media (max-width: 480px) and (max-height: 851px) {
+    /* Ajustes específicos para telas pequenas com altura limitada */
+    
+    /* Reduzir altura do header para economizar espaço */
+    :root {
+        --header-height: 55px;
+    }
+    
+    header.site-header {
+        padding: 10px 0;
+        height: var(--header-height);
+    }
+    
+    /* Ajustar seção hero para telas pequenas */
+    #inicio {
+        min-height: calc(100vh - var(--header-height));
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Compactar texto do hero */
+    .hero-text h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+    
+    .hero-text p {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .hero-text .subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+    
+    /* Botões mais compactos */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .hero-buttons .btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 250px;
+        margin: 0;
+    }
+    
+    /* Reduzir padding das seções */
+    section {
+        padding: 25px 0;
+    }
+    
+    /* Compactar grid de serviços */
+    .services-grid {
+        gap: 15px;
+    }
+    
+    .service-item {
+        padding: 20px;
+    }
+    
+    .service-item h3 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .service-item p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Ajustar seção sobre/contato */
+    .about-contact {
+        padding: 25px 0;
+    }
+    
+    .about-contact-container {
+        gap: 25px;
+    }
+    
+    .about-content h2, .contact-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .about-content p, .contact-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    
+    /* Features mais compactas */
+    .feature {
+        margin-bottom: 15px;
+        gap: 12px;
+    }
+    
+    .feature h3 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+    
+    .feature p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+    
+    /* Informações de contato mais compactas */
+    .contact-info p {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+    
+    /* Botão WhatsApp flutuante menor */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 70px;
+        right: 15px;
+    }
+    
+    .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Stats mais compactas */
+    .stats {
+        padding: 30px 20px;
+    }
+    
+    .stats-container {
+        gap: 15px;
+    }
+    
+    .stat-item h2 {
+        font-size: 1.8rem;
+        margin-bottom: 3px;
+    }
+    
+    .stat-item p {
+        font-size: 0.85rem;
+    }
+    
+    /* Footer mais compacto */
+    footer {
+        min-height: 50px;
+        padding: 10px 0;
+    }
+    
+    .footer-center p {
+        font-size: 0.8rem;
+        margin-top: 0;
+    }
+    
+    /* Background shape ajustado */
+    .hero-background-shape {
+        height: 80px;
+        top: calc(100vh - var(--header-height) - 20px);
+    }
+    
+    /* Logo menor no header */
+    .logo {
+        font-size: 0.9rem;
+    }
+    
+    .logo img {
+        width: 25px;
+        margin-right: 8px;
+    }
+    
+    /* Container com padding reduzido */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Overlay menu ajustado */
+    .mobile-menu-overlay {
+        padding: 60px 15px 30px;
+    }
+    
+    .overlay-nav-list {
+        margin-bottom: 20px;
+    }
+    
+    .overlay-nav-list li {
+        margin-bottom: 10px;
+    }
+    
+    /* Store buttons menores */
+    .store-button {
+        padding: 8px 12px;
+        font-size: 12px;
+        margin: 3px;
+    }
+    
+    .store-button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+    
+    .store-text .small {
+        font-size: 9px;
+    }
+    
+    .store-text .big {
+        font-size: 12px;
+    }
+}
+
+/* Media Query para telas extra pequenas (até 360px de largura) */
+@media (max-width: 360px) {
+    /* Header ultra compacto */
+    :root {
+        --header-height: 50px;
+    }
+    
+    header.site-header {
+        padding: 8px 0;
+    }
+    
+    .logo {
+        font-size: 0.8rem;
+    }
+    
+    .logo img {
+        width: 22px;
+        margin-right: 6px;
+    }
+    
+    /* Container com padding mínimo */
+    .container {
+        padding: 0 12px;
+    }
+    
+    /* Hero ultra compacto */
+    #inicio {
+        padding: 15px 0;
+        min-height: calc(100vh - var(--header-height));
+    }
+    
+    .hero-text h1 {
+        font-size: clamp(1.5rem, 9vw, 2rem);
+        line-height: 1.0;
+        margin-bottom: 12px;
+    }
+    
+    .hero-text p {
+        font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+    
+    .hero-text .subtitle {
+        font-size: 0.75rem;
+        margin-bottom: 6px;
+    }
+    
+    .hero-buttons .btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+        max-width: 200px;
+    }
+    
+    /* Seções ultra compactas */
+    section {
+        padding: 20px 0;
+    }
+    
+    /* Serviços ultra compactos */
+    .services h2 {
+        font-size: clamp(1.5rem, 7vw, 1.8rem);
+        margin-bottom: 8px;
+    }
+    
+    .services .section-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 25px;
+    }
+    
+    .service-item {
+        padding: 15px;
+    }
+    
+    .service-item h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .service-item p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    .service-item i {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 10px;
+    }
+    
+    /* Sobre/Contato ultra compacto */
+    .about-content h2, .contact-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    
+    .about-content p, .contact-content p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+    
+    .feature {
+        margin-bottom: 12px;
+        gap: 10px;
+    }
+    
+    .feature h3 {
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+    }
+    
+    .feature p {
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+    
+    .feature .check-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* WhatsApp flutuante ultra pequeno */
+    .whatsapp-float {
+        width: 45px;
+        height: 45px;
+        bottom: 65px;
+        right: 12px;
+    }
+    
+    .whatsapp-float svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Stats ultra compactas */
+    .stats {
+        padding: 25px 15px;
+    }
+    
+    .stat-item h2 {
+        font-size: 1.5rem;
+        margin-bottom: 2px;
+    }
+    
+    .stat-item p {
+        font-size: 0.75rem;
+    }
+    
+    /* Footer ultra compacto */
+    footer {
+        min-height: 45px;
+        padding: 8px 0;
+    }
+    
+    .footer-center p {
+        font-size: 0.7rem;
+    }
+    
+    /* Store buttons ultra pequenos */
+    .store-button {
+        padding: 6px 10px;
+        font-size: 10px;
+        margin: 2px;
+        border-radius: 4px;
+    }
+    
+    .store-button img {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+    
+    .store-text .small {
+        font-size: 8px;
+    }
+    
+    .store-text .big {
+        font-size: 10px;
+    }
+    
+    /* Overlay menu ultra compacto */
+    .mobile-menu-overlay {
+        padding: 55px 12px 25px;
+    }
+    
+    .overlay-nav-list li a.overlay-nav-link {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .overlay-whatsapp-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        max-width: 280px;
+    }
+}
+
+/* Media Query para telas muito pequenas com altura limitada (ex: landscape em celulares pequenos) */
+@media (max-width: 480px) and (max-height: 500px) {
+    /* Header mínimo */
+    :root {
+        --header-height: 45px;
+    }
+    
+    header.site-header {
+        padding: 6px 0;
+    }
+    
+    /* Hero ajustado para landscape */
+    #inicio {
+        padding: 10px 0;
+        min-height: calc(100vh - var(--header-height));
+    }
+    
+    .hero-text h1 {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+        line-height: 0.9;
+        margin-bottom: 8px;
+    }
+    
+    .hero-text p {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    
+    .hero-text .subtitle {
+        font-size: 0.7rem;
+        margin-bottom: 4px;
+    }
+    
+    .hero-buttons {
+        gap: 6px;
+        margin-top: 10px;
+    }
+    
+    .hero-buttons .btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+        max-width: 180px;
+    }
+    
+    /* Seções mínimas */
+    section {
+        padding: 15px 0;
+    }
+    
+    /* Ocultar imagem do hero em telas landscape muito pequenas */
+    .hero-image {
+        display: none;
+    }
+    
+    /* WhatsApp flutuante menor */
+    .whatsapp-float {
+        width: 40px;
+        height: 40px;
+        bottom: 50px;
+        right: 10px;
+    }
+    
+    .whatsapp-float svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    /* Stats em linha única */
+    .stats-container {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px;
+    }
+    
+    .stat-item h2 {
+        font-size: 1.2rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.65rem;
+    }
+}
