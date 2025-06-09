@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Casos de Sucesso</title>
+    <style>
+        :root {
+            --background-color: #F8F6F3;
+            --primary-color: #114f53;
+            --secondary-color: #3D9998;
+            --text-color: #333;
+            --text-light: #555;
+            --white: #fff;
+            --border-color: #ddd;
+            --highlight-color: #114f53;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .carousel-wrapper {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease;
+            gap: 30px;
+        }
+
+        .success-card {
+            min-width: calc(50% - 15px);
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .success-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* AQUI ESTÁ A SEÇÃO DE IMAGENS */
+        .card-image {
+            position: relative;
+            height: 200px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(17, 79, 83, 0.8), rgba(61, 153, 152, 0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+            padding: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .success-card:hover .company-logo {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            margin-bottom: 15px;
+        }
+
+        .company-info h3 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .company-info .sector {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-content p {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .results-preview {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+            padding: 12px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--highlight-color);
+            position: relative;
+            padding-right: 15px;
+        }
+
+        .result-number:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60%;
+            width: 2px;
+            background-color: var(--secondary-color);
+            opacity: 0.5;
+        }
+
+        .result-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex: 1;
+            padding-left: 15px;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .carousel-btn {
+            background: var(--white);
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn:hover {
+            background: var(--secondary-color);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .carousel-track {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .success-card {
+                min-width: 100%;
+            }
+            
+            .carousel-controls {
+                display: none;
+            }
+            
+            .section-title h1 {
+                font-size: 2rem;
+            }
+            
+            .results-preview {
+                gap: 12px;
+            }
+            
+            .result-number {
+                font-size: 1.5rem;
+            }
+            
+            .result-label {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-title">
+            <h1>Resultados</h1>
+            <p>Conheça alguns dos casos de sucesso que transformaram negócios através de nossa assessoria especializada</p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Card 1 - AQUI VOCÊ ADICIONA A IMAGEM -->
+                    <div class="success-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80');">
+                            <div class="card-overlay">
+                                <img src="https://logo.com/image-cdn/images/kts928pd/production/e6c16c6fdc213eae670cae97c487582ad720f85e-351x351.png?w=1080&q=72&fm=webp" alt="TechConsult Logo" class="company-logo">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="company-info">
+                                    <h3>TechConsult Ltda</h3>
+                                    <div class="sector">Consultoria em TI</div>
+                                </div>
+                            </div>
+                            <p>Empresa de médio porte buscava otimizar processos internos e aumentar a eficiência operacional. Nossa assessoria implementou soluções estratégicas que revolucionaram seus resultados.</p>
+                            
+                            <div class="results-preview">
+                                <div class="result-item">
+                                    <span class="result-number">+10</span>
+                                    <span class="result-label">anos transformando negócios.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 - AQUI VOCÊ ADICIONA A SEGUNDA IMAGEM -->
+                    <div class="success-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80');">
+                            <div class="card-overlay">
+                                <img src="https://w7.pngwing.com/pngs/535/511/png-transparent-logo-for-agriculture-agronomy-rural.png" alt="Verde & Raiz Logo" class="company-logo">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="company-info">
+                                    <h3>Verde & Raiz</h3>
+                                    <div class="sector">Agronegócio</div>
+                                </div>
+                            </div>
+                            <p>Cooperativa agrícola precisava modernizar sua gestão financeira e expandir mercados. Nossa assessoria estratégica resultou em crescimento sustentável e maior competitividade.</p>
+                            <div class="results-preview">
+                                <div class="result-item">
+                                    <span class="result-number">+5</span>
+                                    <span class="result-label">anos transformando negócios.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 - AQUI VOCÊ ADICIONA A TERCEIRA IMAGEM -->
+                    <div class="success-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80');">
+                            <div class="card-overlay">
+                                <img src="https://www.creativefabrica.com/wp-content/uploads/2019/03/Globe-global-logo-by-Mansel-Brist.jpg" alt="Inovação Global Logo" class="company-logo">
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <div class="company-info">
+                                    <h3>Inovação Global</h3>
+                                    <div class="sector">Manufatura</div>
+                                </div>
+                            </div>
+                            <p>Indústria familiar enfrentava desafios de sucessão e modernização. Nossa assessoria conduziu a transição geracional e implementou práticas de gestão moderna.</p>
+                            <div class="results-preview">
+                                <div class="result-item">
+                                    <span class="result-number">+15</span>
+                                    <span class="result-label">anos em gestão moderna.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn" onclick="moveCarousel(-1)">‹</button>
+                <button class="carousel-btn" id="nextBtn" onclick="moveCarousel(1)">›</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const maxSlides = 1; // Adjusted for 3 cards total, showing 2 at a time
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const translateX = currentSlide * -50; // Move 50% each time (since we show 2 cards)
+            track.style.transform = `translateX(${translateX}%)`;
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === maxSlides;
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide > maxSlides) currentSlide = maxSlides;
+            updateCarousel();
+        }
+
+        // Initialize carousel
+        updateCarousel();
+    </script>
+</body>
+</html>
