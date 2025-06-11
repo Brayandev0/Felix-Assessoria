@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix Contabilidade</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png">
+                Felix Contabilidade
+            </div>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i data-feather="menu" class="icon-menu"></i>
+                </button>
+                <ul class="nav-list desktop-nav">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <button class="overlay-close-btn" aria-label="Close menu">
+            <i data-feather="x"></i>
+        </button>
+        <div class="overlay-logo">
+            <img src="logo.png" style="width: 45px; margin-right: 10px;">
+            Felix Contabilidade
+        </div>
+        <ul class="overlay-nav-list">
+            <li><a href="#inicio" class="overlay-nav-link">Início</a></li>
+            <li><a href="#servicos" class="overlay-nav-link">Serviços</a></li>
+            <li><a href="#sobre" class="overlay-nav-link">Sobre</a></li>
+        </ul>
+        <a href="https://vip.acessorias.com/felix" target="_blank" class="btn btn-whatsapp overlay-whatsapp-btn">
+            <i data-feather="log-in"></i>
+            Área do Cliente
+        </a>
+        <div style="width: 100%; max-width: 360px; padding-bottom: 20px;">
+            <a> Gostaria de ver mais sobre o que fazer? <br> <strong> Acesse nossas redes sociais!</strong></a>
+            <div style="display: flex; gap: 25px; margin-top: 5%; justify-content: center;">
+                <a href="https://wa.me/5534991055097" target="_blank" aria-label="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#2A6463" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-whatsapp">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/felixcontabilidadeudi/" target="_blank" aria-label="Facebook">
+                    <i data-feather="facebook" stroke="#2A6463"></i>
+                </a>
+                <a href="https://www.instagram.com/felixcontabilidadeudi/" target="_blank" aria-label="Instagram">
+                    <i data-feather="instagram" stroke="#2A6463"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+        <section id="servicos" class="services">
+            <div class="hero-background-shape">
+                <svg viewBox="0 0 1000 300" preserveAspectRatio="none"
+                    style="width: 100%; height: 100%; transform: scaleY(-1); margin-top: 7.5%;">
+                    <path d="M0,150 C200,300 500,0 1000,150 L1000,300 L0,300 Z" fill="#155e63"></path>
+                </svg>
+            </div>
+            <div class="container">
+                <h2 style="margin-top: 3%;">Conheça nossos <span class="highlight-underline">Serviços</span></h2>
+                <p class="section-subtitle">Soluções sob medida para empresas que querem crescer com segurança.</p>
+                <div class="services-grid">
+
+                    <div class="service-item">
+                        <i data-feather="briefcase"></i>
+                        <h3>Gestão Empresarial</h3>
+                        <p><strong>Facilitamos</strong> a formalização e o encerramento de negócios de forma simples e
+                            <strong>eficiente </strong>.</p>
+                    </div>
+                    <div class="service-item">
+                        <i data-feather="dollar-sign"></i>
+                        <h3>Assesoria Tributária</h3>
+                        <p><strong>Orientação</strong> para <strong>otimizar recursos</strong> financeiros e melhorar a
+                            performance do seu negócio.</p>
+                    </div>
+                    <div class="service-item">
+                        <i data-feather="trending-down"></i>
+                        <h3>Negociação de Dívidas</h3>
+                        <p>Economize até <strong>70%</strong> com nossas negociações inteligentes.</p>
+                    </div>
+                    <div class="service-item">
+                        <i data-feather="file-text"></i>
+                        <h3>Relatórios Financeiros Estratégicos</h3>
+                        <p>Elaboramos demonstrações contábeis e <strong>relatórios financeiros</strong> Completos e
+                            Estratégicos para sua Empresa.
+
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <i data-feather="users"></i>
+                        <h3>Gestão de Folha de Pagamento</h3>
+                        <p>Oferecemos uma <strong>solução completa</strong> para a Gestão da folha de pagamento,
+                            garantindo precisão nos cálculos e tranquilidade para sua empresa.</p>
+                    </div>
+                    <div class="service-item">
+                        <i data-feather="clipboard"></i>
+                        <h3>Consultoria em Planejamento Financeiro</h3>
+                        <p>Fornecemos <strong>orientação estratégica</strong> para otimizar o uso dos recursos
+                            financeiros do seu negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="inicio" class="hero full-height-section">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <p class="subtitle">Contabilidade e soluções empresariais</p>
+                    <h1>Respire aliviado<br><span class="highlight">Quitar sua divida</span><br>Nunca foi tão fácil!
+                    </h1>
+                    <p>
+                        <strong>Menos dívida, mais liberdade!</strong> Chegou a hora de resolver suas pendências tributárias com <strong>condições especiais</strong>, <strong>agilidade</strong> e <strong>soluções eficazes</strong>. Respire aliviado e foque no que realmente importa: o seu <strong>futuro financeiro</strong>.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contato" class="btn btn-primary">Entre em contato</a>
+                        <a href="#servicos" class="btn btn-secondary">Serviços</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Felix Acessoria.png"
+                        style="width: clamp(200px, 80%, 800px); margin-left: 20%; margin-bottom: 3%;">
+                </div>
+            </div>
+        </section>
+        <section id="sobre" class="about-contact">
+            <div class="container about-contact-container">
+                <div class="about-content">
+                    <h2>Sobre a Felix Contabilidade</h2>
+                    <p>Na <strong>Felix Contabilidade</strong>, atuamos estrategicamente nas áreas de contabilidade
+                        financeira, gestão tributária, administração de folha de pagamento e consultoria empresarial.
+                        Oferecemos soluções que ajudam empresas de todos os portes a manter a conformidade legal,
+                        otimizar recursos e tomar decisões estratégicas para o crescimento sustentável. <br> <br>
+                        <strong style="font-size: 20px;"> Porque o seu negócio é da nossa conta.</strong>
+
+                    </p>
+
+                    <div class="feature">
+                        <i data-feather="check-circle" class="check-icon"></i>
+                        <div>
+                            <h3>Soluções Inovadoras e Eficientes</h3>
+                            <p><strong>impulsionamos</strong> o crescimento do seu negócio, oferecendo soluções que
+                                transformam e <strong>geram</strong> resultados.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i data-feather="check-circle" class="check-icon"></i>
+                        <div>
+                            <h3>Agilidade e estratégia para elevar sua empresa.</h3>
+                            <p><strong>Modernização</strong> e gestão estratégica para o <strong>sucesso</strong> da sua
+                                empresa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="contato" class="contact-content">
+                    <h2>Entre em contato conosco</h2>
+                    <p>Ficou interessado em nossos serviços? <strong>Entre em contato!</strong></p>
+                    <div class="contact-info">
+                        <p><i data-feather="map-pin"></i> <span> <strong>160, Rua Cambuquira<br>Uberlândia, Minas
+                                    Gerais<br>38400-426</strong></span></p>
+                        <p><i data-feather="phone"></i> <span> <strong>(34) 99105-5097</strong></span></p>
+                    </div>
+                    <br>
+                    <a href="https://wa.me/5534991055097" target="_blank" class="btn btn-whatsapp">
+                        <span>Contate-nos por WhatsApp</span>
+                    </a>
+                    <br>
+                    <br>
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.felixcontabilidadeudi"
+                        target="_blank" class="store-button" aria-label="Google Play">
+                        <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Google Play">
+                        <span class="store-text">
+                            <span class="small">Disponível no</span>
+                            <span class="big">Google Play</span>
+                        </span>
+                    </a>
+
+                    <a target="_blank" href="https://apps.apple.com/br/app/felix-contabilidade-udi/id1631361391"
+                        target="_blank" class="store-button" aria-label="App Store">
+                        <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" alt="App Store">
+                        <span class="store-text">
+                            <span class="small">Baixar na</span>
+                            <span class="big">App Store</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+        <div class="container">
+            <a id="createc" href="https://createc.com.br" target="_blank">
+                <span class="createc-text">Desenvolvido por</span>
+                <span class="createc-brand">Createc</span>
+            </a>
+        </div>
+
+
+        <section class="stats">
+            <div class="container stats-container">
+                <div class="stat-item">
+                    <h2>10.000+</h2>
+                    <p style="font-size: 20px;">Clientes atendidos</p>
+                </div>
+                <div class="stat-item">
+                    <h2>15.000+</h2>
+                    <p style="font-size: 20px;">Consultorias realizadas</p>
+                </div>
+                <div class="stat-item">
+                    <h2>20+</h2>
+                    <p style="font-size: 20px;">Anos de mercado</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="border-top: 1px solid var(--border-color)">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a style="background-color: #114f53;color: white; border-radius: 10px;" target="_blank"
+                    href="https://vip.acessorias.com/felix"><i data-feather="log-in"></i> Área do Cliente</a>
+            </div>
+            <div class="footer-center">
+                <p>© 2025 Felix Contabilidade. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.facebook.com/felixcontabilidadeudi/" target="_blank" aria-label="Facebook">
+                    <i data-feather="facebook" stroke="#2A6463"></i>
+                </a>
+                <a href="https://www.instagram.com/felixcontabilidadeudi/" target="_blank" aria-label="Instagram">
+                    <i data-feather="instagram" stroke="#2A6463"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5534991055097" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <!-- Font Awesome WhatsApp icon -->
+            <path fill="#ffffff"
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        feather.replace(); // Initialize Feather Icons
+    </script>
+    <!-- Plugin VLibras de acessibilidade em Libras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>
