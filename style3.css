@@ -139,7 +139,7 @@ nav.main-nav ul.desktop-nav li a:hover {
 }
 
 #inicio {
-    background-image: url(fundo-inicio.png);
+    background-image: url(Inicio.png);
     background-repeat: no-repeat;
     background-size: clamp(250px, 50%, 1000px);
     background-position: right bottom;
@@ -1032,10 +1032,7 @@ footer .container {
     }
 
     #inicio {
-        padding: 40px 0;
-        /* Adjust hero padding */
-        min-height: calc(100vh - var(--header-height));
-        /* Example */
+        min-height: calc( - var(--header-height));
     }
 }
 
