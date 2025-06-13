@@ -142,7 +142,7 @@ nav.main-nav ul.desktop-nav li a:hover {
 #inicio {
     background-image: url(Inicio.png);
     background-repeat: no-repeat;
-    background-size: clamp(250px, 50%, 1000px);
+    background-size: clamp(230px, 50%, 980px);
     background-position: right bottom;
 }
 
@@ -284,7 +284,7 @@ main {
 
 /* Section Base Styles (Padding) */
 section {
-    padding: 60px 0;
+    padding: 20px 0;
     /* Default padding for sections */
     background-color: var(--background-color);
     /* Ensure consistent background */
@@ -426,7 +426,7 @@ section {
     height: 100%;
 }
 
-.bottom-inicio{
+.bottom-inicio {
     width: 100%;
     height: 150px;
 }
@@ -504,11 +504,6 @@ section {
 }
 
 /* About & Contact Section */
-.about-contact {
-    /* No min-height here */
-    padding: 70px 0;
-    padding-bottom: 0;
-}
 
 .about-contact-container {
     display: flex;
@@ -713,7 +708,6 @@ section {
 .stats {
     /* No min-height here */
     background-color: var(--primary-color);
-    padding: 40px 20px;
     /* Add horizontal padding */
     color: var(--white);
 }
@@ -927,24 +921,6 @@ footer .container {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    section {
-        padding: 40px 0;
-        /* Adjust padding for all sections on medium screens */
-    }
-
-
-
-    .hero-image {
-        display: none;
-    }
-
-    #inicio {
-        padding: 40px 0;
-        /* Adjust hero padding */
-        min-height: calc(100vh);
-        /* Example: Account for header */
-    }
-
     .hero-container {
         flex-direction: column;
         gap: 30px;
@@ -955,22 +931,9 @@ footer .container {
         order: 2;
     }
 
-    .hero-image {
-        order: 1;
-        margin-bottom: 30px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .hero-text p {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .hero-image svg {
-        margin-left: auto;
-        margin-right: auto;
-        max-height: 300px;
     }
 
     .hero-background-shape {
@@ -1032,23 +995,12 @@ footer .container {
         /* Adjust padding */
     }
 
-    #inicio {
-        min-height: calc( - var(--header-height));
-    }
 }
 
 @media (max-width: 480px) {
     section {
         padding: 30px 0;
         /* Further reduce padding for sections */
-    }
-
-    #inicio {
-        padding: 30px 0;
-        /* Further reduce hero padding */
-        height: calc(100vh - var(--header-height));
-        position: relative;
-        /* Adicionado para servir como referência para o shape */
     }
 
     .hero-buttons {
@@ -1192,15 +1144,6 @@ footer .container {
     header.site-header {
         padding: 10px 0;
         height: var(--header-height);
-    }
-
-    /* Ajustar seção hero para telas pequenas */
-    #inicio {
-        min-height: calc(100vh - var(--header-height));
-        padding: 20px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     /* Compactar texto do hero */
@@ -1424,12 +1367,6 @@ footer .container {
         padding: 0 12px;
     }
 
-    /* Hero ultra compacto */
-    #inicio {
-        padding: 15px 0;
-        min-height: calc(100vh - var(--header-height));
-    }
-
     .hero-text h1 {
         font-size: clamp(1.5rem, 9vw, 2rem);
         line-height: 1.0;
@@ -1611,12 +1548,6 @@ footer .container {
         padding: 6px 0;
     }
 
-    /* Hero ajustado para landscape */
-    #inicio {
-        padding: 10px 0;
-        min-height: calc(100vh - var(--header-height));
-    }
-
     .hero-text h1 {
         font-size: clamp(1.2rem, 6vw, 1.8rem);
         line-height: 0.9;
@@ -1650,11 +1581,6 @@ footer .container {
         padding: 15px 0;
     }
 
-    /* Ocultar imagem do hero em telas landscape muito pequenas */
-    .hero-image {
-        display: none;
-    }
-
     /* WhatsApp flutuante menor */
     .whatsapp-float {
         width: 40px;
@@ -1684,11 +1610,22 @@ footer .container {
     }
 }
 
-@media (max-width:768px) {
+@media (max-width:999px) {
 
 
     #inicio {
         background-image: none;
     }
-    
+
+    .hero-image {
+        display: none;
+    }
+
+}
+@media (max-width:1920px) and (max-height:1080px){
+    #inicio{
+
+        background-size: clamp(230px, 50%, 680px);
+
+    }
 }
