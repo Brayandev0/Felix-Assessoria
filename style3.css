@@ -136,6 +136,7 @@ nav.main-nav ul.desktop-nav li a:hover {
 
 #inicio .container {
     max-width: 1500px;
+
 }
 
 #inicio {
@@ -1681,4 +1682,13 @@ footer .container {
     .stat-item p {
         font-size: 0.65rem;
     }
+}
+
+@media (max-width:768px) {
+
+
+    #inicio {
+        background-image: none;
+    }
+    
 }
