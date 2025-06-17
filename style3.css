@@ -1629,3 +1629,18 @@ footer .container {
 
     }
 }
+
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2000px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 3840px) {
+  .container {
+    max-width: 2400px;
+    font-size: 1.4rem;
+  }
+}
